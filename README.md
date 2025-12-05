@@ -1,12 +1,20 @@
 # Validador de Datos Productivos / Productive Data Validator
 
+<<<<<<< HEAD
 ## Descripción / Description
+=======
+##  Descripción / Description
+>>>>>>> 7895b77fd74ab8d9fead6b1d0517ed197b9d2257
 Este proyecto es una aplicación en **Python + Streamlit** que permite validar datos productivos según reglas configurables, generar visualizaciones y exportar informes en **PDF bilingüe (Español/Inglés)** con tablas y gráficos incrustados.  
 This project is a **Python + Streamlit** application that validates productive data based on configurable rules, generates visualizations, and exports **bilingual PDF reports (Spanish/English)** with embedded tables and charts.
 
 ---
 
+<<<<<<< HEAD
 Características / Features
+=======
+##  Características / Features
+>>>>>>> 7895b77fd74ab8d9fead6b1d0517ed197b9d2257
 - Validación de columnas obligatorias / Mandatory column validation  
 - Detección de duplicados y valores nulos / Duplicate and null value detection  
 - Verificación de rangos y fechas válidas / Range and date validation  
@@ -16,13 +24,18 @@ Características / Features
 
 ---
 
+<<<<<<< HEAD
 ##  Instalación / Installation
+=======
+## Instalación / Installation
+>>>>>>> 7895b77fd74ab8d9fead6b1d0517ed197b9d2257
 1. Clona este repositorio / Clone this repository:
    ```bash
    git clone https://github.com/TU_USUARIO/validador-datos-productivos.git
    cd validador-datos-productivos
 2. Crea un entorno virtual e instala dependencias / Create a virtual environment and install dependencies:
    ```bash
+<<<<<<< HEAD
     python -m venv venv
     source venv/bin/activate   # Linux/Mac
     venv\Scripts\activate      # Windows
@@ -70,4 +83,40 @@ This project is licensed under the MIT License.
 
 
 
+=======
+   python -m venv venv
+   source venv/bin/activate   # Linux/Mac
+   venv\Scripts\activate      # Windows
+   pip install -r requirements.txt
+3. Uso/Usage
+   ```bash
+   streamlit run validador_datos.py
+
+---
+
+# Estructura del proyecto/Project structure:
+      
+      validador-datos-productivos/
+      │── validador_datos.py        # Script principal / Main script
+      │── reglas.json               # Reglas configurables / Configurable rules
+      │── requirements.txt          # Dependencias / Dependencies
+      │── assets/
+      │    └── logo.png             # Logo opcional / Optional logo
+      │── README.md                 # Documentación / Documentation
+      
+
+
+---
+
+# Author:
+
+Alfonso Romero Martínez
+Ingeniero Informático | Python & Machine Learning | Data Science | Backend Development
+
+---
+
+# Licencia/License:
+
+Este proyecto está bajo la licencia MIT./ This project is licensed under the MIT License.
+>>>>>>> 7895b77fd74ab8d9fead6b1d0517ed197b9d2257
 
