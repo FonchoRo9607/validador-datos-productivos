@@ -10,8 +10,8 @@ import json
 import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
-import pdfkit
 import os
+from fpdf import FPDF
 
 
 
