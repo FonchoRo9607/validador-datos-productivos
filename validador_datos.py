@@ -30,7 +30,7 @@ def cargar_datos(archivo):
 
 def cargar_reglas(path="reglas.json"):
     try:
-        with open(path, "r", encoding="utf-8") as f:  # aseguramos UTF-8
+        with open(path, "r", encoding="utf-8") as f:
             reglas = json.load(f)
         return reglas
     except Exception as e:
@@ -83,6 +83,7 @@ def validar_datos(df, reglas):
 
 
 
+
 ## Generar gráficos y guardarlos
 
 
@@ -103,7 +104,7 @@ def generar_graficos(resultados, mostrar=True):
             st.pyplot(fig)
         plt.close(fig)
 
-    # Gráfico de duplicados
+    # Gráfico de duplicados (ejemplo con columna 'id')
     if "duplicados_id" in resultados:
         duplicados = resultados["duplicados_id"]
         total = resultados["total_registros"]
@@ -120,6 +121,7 @@ def generar_graficos(resultados, mostrar=True):
         plt.close(fig)
 
     return rutas
+
 
 
 
@@ -194,6 +196,7 @@ def generar_informe(resultados, rutas_graficos=None, nombre_archivo="informe_val
 
 
 
+
 ## interfaz
 
 def main():
@@ -202,7 +205,7 @@ def main():
     reglas = cargar_reglas()
 
     if archivo is not None:
-        df = pd.read_csv(archivo, encoding="utf-8")  # aseguramos lectura en UTF-8
+        df = pd.read_csv(archivo, encoding="utf-8")
         st.write("Vista previa de los datos / Data preview:")
         st.dataframe(df.head())
 
@@ -212,26 +215,24 @@ def main():
         st.json(resultados)
 
         st.subheader("Gráficos en la interfaz / Charts in interface")
-        generar_graficos(resultados, mostrar=True)
+        rutas_graficos = generar_graficos(resultados, mostrar=True)
 
         if st.button("Generar Informe PDF Bilingüe"):
             archivo_pdf = generar_informe(resultados, rutas_graficos)
-
-            # Mostrar mensaje de éxito
             st.success("Informe generado correctamente")
 
-            # Abrir el PDF y ofrecer descarga
+            # Botón de descarga
             with open(archivo_pdf, "rb") as f:
                 st.download_button(
-                label="📥 Descargar Informe PDF",
-                data=f,
-                file_name=archivo_pdf,
-                mime="application/pdf"
+                    label="📥 Descargar Informe PDF",
+                    data=f,
+                    file_name=archivo_pdf,
+                    mime="application/pdf"
                 )
-
 
 if __name__ == "__main__":
     main()
+
 
 
 
