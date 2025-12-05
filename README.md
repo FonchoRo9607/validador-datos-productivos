@@ -34,15 +34,16 @@ This project is a **Python + Streamlit** application that validates productive d
 ---
 
 # Estructura del proyecto/Project structure:
+      ```bash
+      validador-datos-productivos/
+      │── validador_datos.py        # Script principal / Main script
+      │── reglas.json               # Reglas configurables / Configurable rules
+      │── requirements.txt          # Dependencias / Dependencies
+      │── assets/
+      │    └── logo.png             # Logo opcional / Optional logo
+      │── README.md                 # Documentación / Documentation
+      
 
-    ```bash
-      validador-datos-productivos:
-     -validador_datos.py
-     -reglas.json
-     -requirements.txt
-     -assets/
-    -   logo.png
-     -README.md
 
 ---
 
