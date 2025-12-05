@@ -1,0 +1,15 @@
+{
+  "columnas_obligatorias": ["id", "fecha", "valor"],
+  "unicidad": ["id"],
+  "tipos_datos": {
+    "id": "int",
+    "fecha": "date",
+    "valor": "float"
+  },
+  "rangos": {
+    "valor": {"min": 0, "max": 1000}
+  },
+  "fechas_validas": {
+    "fecha": {"min": "2020-01-01", "max": "2025-12-31"}
+  }
+}
