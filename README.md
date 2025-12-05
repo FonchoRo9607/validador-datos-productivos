@@ -53,4 +53,56 @@ validador-datos-productivos/
    streamlit run validador_datos.py
 
    ```
----   
+---  
+
+4. Abrir el navegador/Open in browser:
+
+   ```
+   http://localhost:8501
+   ```
+---
+
+# Despliegue en Streamlit Cloud / Deployment on Streamlit Cloud
+
+   ```
+   - Conecta tu cuenta de GitHub en Streamlit Cloud.
+   - Selecciona el repositorio validador-datos-productivos.
+   - Define el archivo principal: validador_datos.py.
+   - Streamlit instalará automáticamente las dependencias de requirements.txt.
+   - Tu aplicación quedará disponible en una URL pública / Your app will be available at a public URL.
+   ```
+---
+
+# Ejemplos de reglas/Example rules (reglas.json)
+
+   ```
+   {
+     "columnas_obligatorias": ["id", "fecha", "valor"],
+     "unicidad": ["id"],
+     "rangos": {
+       "valor": { "min": 0, "max": 100 }
+     },
+     "fechas_validas": {
+       "fecha": { "min": "2020-01-01", "max": "2025-12-31" }
+     }
+   }
+
+   ```
+---
+
+# Tecnologías/Technologies
+
+   ```
+   - Python 3.9+
+   - Streamlit
+   - Pandas
+   - Matplotlib
+   - Seaborn
+   - fpdf2
+
+   ```
+---
+
+# Autor / Author
+
+Ingeniero Informático | Backend Developer | Data Scientist | Arquitecto de Software en formación
