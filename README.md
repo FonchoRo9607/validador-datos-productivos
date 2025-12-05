@@ -30,3 +30,27 @@ validador-datos-productivos/
 │── README.md                 # Documentación / Documentation
 ```
 ---
+
+## ⚙️ Instalación local / Local installation
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/FonchoRo9607/validador-datos-productivos.git
+   cd validador-datos-productivos
+---
+2. Crear entorno virtual e instalar dependencias:
+   ```
+   python -m venv venv
+   source venv/bin/activate   # Linux/Mac
+   venv\Scripts\activate      # Windows
+   pip install -r requirements.txt
+   
+   ```
+---
+3. Ejecutar la aplicación:
+
+   ```
+   streamlit run validador_datos.py
+
+   ```
+---   
