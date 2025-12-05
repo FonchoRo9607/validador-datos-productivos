@@ -215,8 +215,20 @@ def main():
         generar_graficos(resultados, mostrar=True)
 
         if st.button("Generar Informe PDF Bilingüe"):
-            archivo_pdf = generar_informe(resultados)
-            st.success(f"Informe generado: {archivo_pdf}")
+        archivo_pdf = generar_informe(resultados, rutas_graficos)
+
+        # Mostrar mensaje de éxito
+        st.success("Informe generado correctamente")
+
+        # Abrir el PDF y ofrecer descarga
+        with open(archivo_pdf, "rb") as f:
+            st.download_button(
+                label="📥 Descargar Informe PDF",
+                data=f,
+                file_name=archivo_pdf,
+                mime="application/pdf"
+            )
+
 
 if __name__ == "__main__":
     main()
