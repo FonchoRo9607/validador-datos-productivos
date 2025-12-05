@@ -34,7 +34,7 @@ Características / Features
    ```bash
    streamlit run validador_datos.py
 
-Sube tu archivo CSV y genera el informe PDF bilingüe con un clic.
+Sube tu archivo CSV y genera el informe PDF bilingüe con un clic./
 Upload your CSV file and generate the bilingual PDF report with one click
    
 
@@ -55,7 +55,7 @@ Alfonso Romero Martínez
 Ingeniero Informático | Python & Machine Learning | Data Science | Backend Development
 
 Licencia / License
-Este proyecto está bajo la licencia MIT.
+Este proyecto está bajo la licencia MIT./
 This project is licensed under the MIT License.
 
 
