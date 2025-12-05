@@ -22,7 +22,7 @@ Características / Features
    git clone https://github.com/TU_USUARIO/validador-datos-productivos.git
    cd validador-datos-productivos
 2. Crea un entorno virtual e instala dependencias / Create a virtual environment and install dependencies:
-   
+   ```bash
     python -m venv venv
     source venv/bin/activate   # Linux/Mac
     venv\Scripts\activate      # Windows
@@ -31,20 +31,24 @@ Características / Features
 4. Uso/Usage:
    
    Ejecuta la aplicación con Streamlit / Run the app with Streamlit:
+   ```bash
    streamlit run validador_datos.py
-   Sube tu archivo CSV y genera el informe PDF bilingüe con un clic.
-   Upload your CSV file and generate the bilingual PDF report with one click
+
+Sube tu archivo CSV y genera el informe PDF bilingüe con un clic.
+Upload your CSV file and generate the bilingual PDF report with one click
    
 
 Estructura del proyecto / Project structure:
 
 validador-datos-productivos/
+
 │── validador_datos.py        # Script principal / Main script
 │── reglas.json               # Reglas configurables / Configurable rules
 │── requirements.txt          # Dependencias / Dependencies
 │── assets/
 │    └── logo.png             # Logo opcional / Optional logo
 │── README.md                 # Documentación / Documentation
+
 
 Autor / Author
 Alfonso Romero Martínez
