@@ -190,11 +190,6 @@ def generar_informe(resultados, nombre_archivo="informe_validacion.pdf"):
     </html>
     """
 
-    config = pdfkit.configuration(wkhtmltopdf=r"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
-    options = {"enable-local-file-access": None, "encoding": "UTF-8"}
-
-    pdfkit.from_string(html_content, nombre_archivo, configuration=config, options=options)
-    return nombre_archivo
 
 
 
