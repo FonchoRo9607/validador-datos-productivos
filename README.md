@@ -19,6 +19,8 @@ El proyecto está diseñado para ser **portable**, funcionando tanto en local co
 ---
 
 ## 📂 Estructura del proyecto / Project structure
+
+```
 validador-datos-productivos/
 │── validador_datos.py        # Script principal / Main script
 │── reglas.json               # Reglas configurables / Configurable rules
@@ -26,5 +28,5 @@ validador-datos-productivos/
 │── assets/
 │    └── logo.png             # Logo opcional / Optional logo
 │── README.md                 # Documentación / Documentation
-
+```
 ---
