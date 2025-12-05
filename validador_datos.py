@@ -132,63 +132,58 @@ def generar_graficos(resultados, mostrar=True):
 
 
 
-def generar_informe(resultados, nombre_archivo="informe_validacion.pdf"):
-    rutas_graficos = generar_graficos(resultados, mostrar=False)
-    ruta_logo = os.path.abspath("logo.png")  # opcional, tu logo personal
+def generar_informe(resultados, rutas_graficos=None, nombre_archivo="informe_validacion.pdf"):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", 'B', 14)
 
-    html_content = f"""
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Informe de Validación / Validation Report</title>
-        <style>
-            body {{ font-family: Arial, Helvetica, sans-serif; margin: 40px; }}
-            header {{ display: flex; align-items: center; margin-bottom: 20px; }}
-            header img {{ height: 60px; margin-right: 20px; }}
-            header h1 {{ color: #2c3e50; }}
-            h2 {{ color: #2980b9; margin-top: 30px; }}
-            table {{ border-collapse: collapse; width: 100%; margin-top: 15px; }}
-            th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
-            th {{ background-color: #2980b9; color: white; }}
-            tr:nth-child(even) {{ background-color: #f2f2f2; }}
-            .summary {{ background-color: #ecf0f1; padding: 10px; margin-bottom: 20px; }}
-            img.chart {{ max-width: 600px; margin-top: 15px; }}
-        </style>
-    </head>
-    <body>
-        <header>
-            <img src="{ruta_logo}" alt="Logo"/>
-            <h1>Informe de Validación de Datos / Data Validation Report</h1>
-        </header>
+    # Título
+    pdf.cell(200, 10, txt="Informe de Validación de Datos / Data Validation Report", ln=True, align="C")
+    pdf.ln(10)
 
-        <div class="summary">
-            <p><strong>Total de registros / Total records:</strong> {resultados.get('total_registros', 'N/A')}</p>
-            <p><strong>Columnas faltantes / Missing columns:</strong> {resultados.get('columnas_faltantes', [])}</p>
-        </div>
+    # Resumen
+    pdf.set_font("Arial", size=12)
+    pdf.cell(200, 10, txt=f"Total de registros / Total records: {resultados.get('total_registros', 'N/A')}", ln=True)
+    pdf.cell(200, 10, txt=f"Columnas faltantes / Missing columns: {resultados.get('columnas_faltantes', [])}", ln=True)
+    pdf.ln(10)
 
-        <h2>Duplicados / Duplicates</h2>
-        <table>
-            <tr><th>Columna / Column</th><th>Cantidad / Count</th></tr>
-            {"".join([f"<tr><td>{k}</td><td>{v}</td></tr>" for k, v in resultados.items() if "duplicados" in k])}
-        </table>
+    # Duplicados
+    pdf.set_font("Arial", 'B', 12)
+    pdf.cell(200, 10, txt="Duplicados / Duplicates", ln=True)
+    pdf.set_font("Arial", size=12)
+    for k, v in resultados.items():
+        if "duplicados" in k:
+            pdf.cell(200, 10, txt=f"{k}: {v}", ln=True)
+    pdf.ln(5)
 
-        <h2>Valores nulos / Null values</h2>
-        <table>
-            <tr><th>Columna / Column</th><th>Cantidad / Count</th></tr>
-            {"".join([f"<tr><td>{k}</td><td>{v}</td></tr>" for k, v in resultados.get('nulos', {}).items()])}
-        </table>
+    # Valores nulos
+    pdf.set_font("Arial", 'B', 12)
+    pdf.cell(200, 10, txt="Valores nulos / Null values", ln=True)
+    pdf.set_font("Arial", size=12)
+    for k, v in resultados.get("nulos", {}).items():
+        pdf.cell(200, 10, txt=f"{k}: {v}", ln=True)
+    pdf.ln(5)
 
-        <h2>Tipos de datos detectados / Detected data types</h2>
-        <table>
-            <tr><th>Columna / Column</th><th>Tipo / Type</th></tr>
-            {"".join([f"<tr><td>{k}</td><td>{v}</td></tr>" for k, v in resultados.get('tipos_detectados', {}).items()])}
-        </table>
+    # Tipos de datos
+    pdf.set_font("Arial", 'B', 12)
+    pdf.cell(200, 10, txt="Tipos de datos detectados / Detected data types", ln=True)
+    pdf.set_font("Arial", size=12)
+    for k, v in resultados.get("tipos_detectados", {}).items():
+        pdf.cell(200, 10, txt=f"{k}: {v}", ln=True)
+    pdf.ln(10)
 
-        <h2>Gráficos / Charts</h2>
-        {"".join([f"<img class='chart' src='{ruta}' />" for ruta in rutas_graficos])}
-    </body>
-    </html>
-    """
+    # Gráficos incrustados
+    if rutas_graficos:
+        pdf.set_font("Arial", 'B', 12)
+        pdf.cell(200, 10, txt="Gráficos / Charts", ln=True)
+        pdf.ln(5)
+        for ruta in rutas_graficos:
+            pdf.image(ruta, x=10, w=180)
+            pdf.ln(10)
+
+    # Guardar PDF
+    pdf.output(nombre_archivo)
+    return nombre_archivo
 
 
 
