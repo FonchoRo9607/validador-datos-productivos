@@ -33,26 +33,27 @@ This project is a **Python + Streamlit** application that validates productive d
 
 ---
 
-Estructura del proyecto/Project structure:
+# Estructura del proyecto/Project structure:
 
-validador-datos-productivos:
-  -validador_datos.py
-  -reglas.json
-  -requirements.txt
-  -assets/
-    -logo.png
-  -README.md
+    ```bash
+      validador-datos-productivos:
+     -validador_datos.py
+     -reglas.json
+     -requirements.txt
+     -assets/
+    -   logo.png
+     -README.md
 
 ---
 
-Author:
+# Author:
 
 Alfonso Romero Martínez
 Ingeniero Informático | Python & Machine Learning | Data Science | Backend Development
 
 ---
 
-Licencia/License:
+# Licencia/License:
 
 Este proyecto está bajo la licencia MIT./ This project is licensed under the MIT License.
 
