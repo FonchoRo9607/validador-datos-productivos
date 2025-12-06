@@ -105,4 +105,6 @@ validador-datos-productivos/
 
 # Autor / Author
 
+## Alfonso Romero Martínez
+
 Ingeniero Informático | Backend Developer | Data Scientist | Arquitecto de Software en formación
